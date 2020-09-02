@@ -1,0 +1,96 @@
+body, html{
+    height: 100%;
+    padding: 0px;
+}
+.back{
+    height: 100%;
+    background-image: linear-gradient(rgb(52, 138, 236), rgb(241, 192, 100));
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center; 
+}
+
+.app-container {
+    background-image: url("images/bg-day.png");
+    max-width: fit-content;
+    min-width: 100px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #000000;
+}
+.header-for-searchbox {
+    display: flex;
+    align-content: center;
+    margin: auto;
+    
+}
+.header-for-searchbox input{
+    border-radius: 10px;
+    height: 20px;
+    opacity: 0.5;    
+}
+.header-for-searchbox input:focus{
+    background-color: #ffffff;
+    opacity: 1;
+    border: none;
+}
+.icon-area {
+    display: flex;
+    align-content: center;
+    margin: auto;
+}
+.main-area {
+    display: flex;
+    align-content: center;
+    margin: auto;
+    flex-direction: column;
+}
+.location{
+    height: 50px;
+    font-size: 30px;
+    margin: auto;
+    padding: 5px;
+}
+.date{
+    height: 50px;
+    font-size: 15px;
+    margin: auto;
+    padding: 5px;
+}
+
+.temp-value{
+    height: 70px;
+    font-size: 35px;
+    margin: auto;
+    font-weight: bolder;
+}
+.weather-details{
+    display: flex;
+    height: fit-content;
+    
+    justify-content: space-between;
+    text-align: center;
+    font-size: 20px;
+}
+.maxmin{
+    flex:1;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-color: rgba(0, 0, 0, 0.267);
+}
+.weather-desc{
+    flex: 1;
+}
+.humidity{
+    flex: 1;
+}
+label{
+    font-size: 10px;
+}

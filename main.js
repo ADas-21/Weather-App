@@ -18,24 +18,36 @@ function setQuery(evt){
      }).then(displayResults);
  }
  function displayResults(weather){
-     let city=document.querySelector('.location .city');
+     let city=document.querySelector('.location');
      city.innerText=`${weather.name}, ${weather.sys.country}`;
      
-     let icon=document.querySelector('.weather-icon');
+     let icon=document.querySelector('.icon-area');
      icon.innerHTML = `<img src="icons/${weather.weather[0].icon}.png"/>`;
+     var imgbg= weather.weather[0].icon;
+     console.log(imgbg);
+     if(imgbg === "01n" || imgbg === "02n" || imgbg === "03n" || imgbg === "04n" || imgbg === "09n" || imgbg === "10n" || imgbg === "13n" || imgbg === "50n"){
+         
+         document.getElementById("d").style.backgroundImage= "url('images/bg-night.png')";
+     }
+     else{
+        document.getElementById("d").style.backgroundImage= "url('images/bg-day.png')";
+     }
      
      let now= new Date();
-     let date= document.querySelector('.location .date');
+     let date= document.querySelector('.date');
      date.innerText = dateBuilder(now);
 
-     let temp= document.querySelector('.current .temp');
+     let temp= document.querySelector('.temp-value');
      temp.innerHTML=`${Math.floor(weather.main.temp)}<span>°c</span>`;
 
-     let desc = document.querySelector('.weather');
-     desc.innerText = weather.weather[0].main;
+     let desc = document.querySelector('.weather-desc');
+     desc.innerHTML = `<u><label>Type</label></u><br>${weather.weather[0].main}`;
 
-     let maxmin= document.querySelector('.hi-low');
-     maxmin.innerText=`${weather.main.temp_max}/${weather.main.temp_min}`
+     let maxmin= document.querySelector('.maxmin');
+     maxmin.innerHTML=`<u><label>Min/Max</label></u><br>${weather.main.temp_max}/${weather.main.temp_min}`;
+
+     let humid = document.querySelector('.humidity');
+     humid.innerHTML= `<u><label>Humid</label></u><br>${weather.main.humidity}%`;
 
 
  }
@@ -50,3 +62,4 @@ function setQuery(evt){
   
     return `${day} ${date} ${month} ${year}`;
  }
+ 
